@@ -29,31 +29,31 @@ public class Fitness {
         }
 
         add(gym, m);
-        System.out.println("Вход в зал РАЗРЕШЕН");
+        System.out.println("Вход в зал Разрешен");
     }
 
     public void enterPool(Membership m) {
         System.out.println("Попытка входа в бассейн: " + m.getOwner().getFullName());
 
         if (!clubOpen() || !m.isActive() || !m.canPool(LocalTime.now())) {
-            System.out.println("Вход в бассейн ЗАПРЕЩЕН");
+            System.out.println("Вход в бассейн Запрещен");
             return;
         }
 
         add(pool, m);
-        System.out.println("Вход в бассейн РАЗРЕШЕН");
+        System.out.println("Вход в бассейн Разрешене");
     }
 
     public void enterGroup(Membership m) {
         System.out.println("Попытка входа на групповое занятие: " + m.getOwner().getFullName());
 
         if (!clubOpen() || !m.isActive() || !m.canGroup(LocalTime.now())) {
-            System.out.println("Вход ЗАПРЕЩЕН");
+            System.out.println("Вход Запрещен");
             return;
         }
 
         add(group, m);
-        System.out.println("Вход РАЗРЕШЕН");
+        System.out.println("Вход Разрешен");
     }
 
     private void add(Membership[] arr, Membership m) {
